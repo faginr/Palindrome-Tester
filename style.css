@@ -1,0 +1,19 @@
+body{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	background-color: whitesmoke;	
+}
+
+h1 {
+	margin-top: 10%;
+}
+
+#user-input {
+	border-radius: 3px;
+}
+
+#output {
+	display: inline-block;
+	margin-top: 15px;
+}
+

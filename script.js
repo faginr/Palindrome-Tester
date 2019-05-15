@@ -1,5 +1,4 @@
 function palindrome(str){
-	debugger
   //Convert String to Lower case
   let newStr = str.toLowerCase();
   //Remove non-alphanumeric
@@ -20,13 +19,13 @@ function palindrome(str){
 
       } else {
         //is not a palindrome, exit loop
-        output.innerHTML = str + " is not a palindrome";
+        output.innerHTML = str + '<span style="color:red">' + " is not" + '<span style="color:black">' + " a palindrome";
         return false;
       }
       front += 1;
       back -= 1;
     }
-    output.innerHTML = str + " is a palindrome";
+    output.innerHTML = str + '<span style="color:green">' + " is" + '<span style="color:black">' + " a palindrome";
     return true;
   } else {
     //odd
@@ -37,13 +36,13 @@ function palindrome(str){
       let backTemp = arr[back];
        if (frontTemp === backTemp){
       } else {
-        output.innerHTML = str + " is not a palindrome";
+        output.innerHTML = str + '<span style="color:red">' + " is not" + '<span style="color:black">' + " a palindrome";
         return false;
       }
       front += 1;
       back -= 1;
     }
-    output.innerHTML = str + " is a palindrome";
+    output.innerHTML = str + '<span style="color:green">' + " is" + '<span style="color:black">' + " a palindrome";
     return true;
 }
 }
