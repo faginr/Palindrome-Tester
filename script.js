@@ -1,56 +1,57 @@
-function palindrome(str) {
+function palindrome(str){
+	debugger
   //Convert String to Lower case
   let newStr = str.toLowerCase();
   //Remove non-alphanumeric
   newStr = newStr.replace(/[^a-z^0-9]/g, "");
   //Convert string to array
   let arr = newStr.split("");
+  let front = 0;
+  let back = (arr.length) - 1;
   //Determine if Array is even
   if (arr.length % 2 === 0) {
     //even
-    let frontEven = 0;
-    let backEven = (arr.length) - 1;
     //compare element by element
     for (let i = 0; i<arr.length/2; i++){
-      let frontTemp = arr[frontEven];
-      let backTemp = arr[backEven];
+      let frontTemp = arr[front];
+      let backTemp = arr[back];
       //determine matches
       if (frontTemp === backTemp){
-        console.log (frontTemp + " = " + backTemp);
-        console.log(true);
+
       } else {
-        console.log(frontTemp + " != " + backTemp);
-        console.log(false);
         //is not a palindrome, exit loop
+        output.innerHTML = str + " is not a palindrome";
         return false;
       }
-      frontEven += 1;
-      backEven -= 1;
+      front += 1;
+      back -= 1;
     }
-    return true
+    output.innerHTML = str + " is a palindrome";
+    return true;
   } else {
     //odd
     //repeat steps for odd case
-    let frontOdd= 0;
-    let backOdd = (arr.length) - 1;
     //modify math for odd case
     for (let i = 0; i<arr.length/2; i++){
-      let frontTemp = arr[frontOdd];
-      let backTemp = arr[backOdd];
+      let frontTemp = arr[front];
+      let backTemp = arr[back];
        if (frontTemp === backTemp){
-        console.log (frontTemp + " = " + backTemp);
-        console.log(true);
       } else {
-        console.log(frontTemp + " != " + backTemp);
-        console.log(false);
+        output.innerHTML = str + " is not a palindrome";
         return false;
       }
-      frontOdd += 1;
-      backOdd -= 1;
+      front += 1;
+      back -= 1;
     }
-    return true
+    output.innerHTML = str + " is a palindrome";
+    return true;
 }
 }
 
 
-palindrome("A man, A plan, a canal. Panama");
+function aquire(){
+const userInput = document.querySelector("#user_input").value;
+console.log(userInput);
+const output = document.querySelector("#output");
+palindrome(userInput);
+}
